@@ -1,14 +1,23 @@
-pipeline {
-    agent none 
-    stages {
-        stage('Set up') {
-            agent { dockerfile true } 
-            steps {
-                withCredentials([string(credentialsId: 'vault-root-token', variable: 'RTOKEN'),usernamePassword(credentialsId: 'patoken', passwordVariable: 'password', usernameVariable: 'username')]){
-                sh 'python /root/abcd.py $password $RTOKEN'
-               }
-             
-            }
-        }
-    }
-}
+pipeline {
+    agent any 
+
+    stages {    
+        stage('test') { 
+            steps { 
+                sh 'echo hello'
+            }            
+        }
+        stage('test1') { 
+            steps { 
+                sh 'echo $TEST'
+            }            
+        }
+        stage('test3') {
+            if (env.BRANCH_NAME == 'master') {
+                echo 'I only execute on the master branch'
+            } else {
+                echo 'I execute elsewhere'
+            }                        
+        }        
+    }
+} 
