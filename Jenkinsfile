@@ -1,29 +1,19 @@
-pipeline {
-            agent any
+pipeline {
+    agent none 
+    stages {
+        stage ('Test 3: Master') {
+    when { branch 'master' }
+    steps { 
+        echo 'I only execute on the master branch.' 
+    }
+}
 
-            stages {
-                    stage('test') {
-                            steps {
-                                    sh 'echo hello'
-                            }
-                    }
-                    stage('test1') {
-                            steps {
-                                    sh 'echo $TEST'
-                            }
-                    }
-                    stage('test3') {
-                            steps {
-                                    script {
-                                            if (env.BRANCH_NAME == 'master') {
-                                                    echo 'I only execute on the master branch'
-                                            } else {
-                                                    echo 'I execute elsewhere'
-                                            }
-                                    }
-                            }
-                    }
-            }
-    } 
-
-   
+stage ('Test 3: Dev') {
+    when { not { branch 'master' } }
+    steps {
+        echo 'I execute on non-master branches.'
+    }
+}
+        }
+    }
+}
