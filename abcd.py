@@ -1,4 +1,4 @@
 import os
-import system
+import sys
 
 print sys.argsv[1]
