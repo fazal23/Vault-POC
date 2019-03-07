@@ -1,7 +1,7 @@
 pipeline {
     agent { dockerfile true} 
     stages {
-        stage ('Test 3: Master') {
+        stage ('Master') {
     when { branch 'master' }
     steps { 
         echo 'I only execute on the master branch.'
@@ -9,7 +9,7 @@ pipeline {
     }
 }
 
-stage ('Test 3: Dev') {
+stage ('Dev') {
     when { not { branch 'master' } }
     steps {
         echo 'I execute on non-master branches.'
