@@ -15,7 +15,7 @@ stage ('Dev') {
     steps {
         echo 'I execute on non-master branches.'
         echo 'Pulling...' + env.BRANCH_NAME
-        sh(returnStdout: true, script: 'git rev-parse --abbrev-ref HEAD').trim()
+        sh "${env.WORKSPACE}"
     }
 }
         }
