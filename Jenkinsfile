@@ -14,8 +14,7 @@ stage ('Test 3: Dev') {
     steps {
         echo 'I execute on non-master branches.'
         echo 'Pulling...' + env.BRANCH_NAME
-        sh 'printenv'
-        sh 'python abcd.py hi'
+        sh 'printenv | grep -i BRANCH_NAME'
     }
 }
         }
