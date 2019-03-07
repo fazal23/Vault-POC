@@ -7,6 +7,7 @@ pipeline {
         echo 'I only execute on the master branch.' 
         echo 'Pulling...' + env.BRANCH_NAME
         sh 'python -V'
+        sh 'python abcd.py env.BRANCH_NAME'
     }
 }
 
@@ -16,6 +17,7 @@ stage ('Test 3: Dev') {
         echo 'I execute on non-master branches.'
         echo 'Pulling...' + env.BRANCH_NAME
         sh 'python -V'
+        sh 'python abcd.py env.BRANCH_NAME'
     }
 }
         }
