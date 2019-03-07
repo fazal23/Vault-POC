@@ -12,6 +12,7 @@ stage ('Test 3: Dev') {
     when { not { branch 'master' } }
     steps {
         echo 'I execute on non-master branches.'
+        echo 'Pulling...' + env.BRANCH_NAME
     }
 }
         }
