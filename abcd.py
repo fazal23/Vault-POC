@@ -1,4 +1,5 @@
 import sys
 import os
-github_branch_name = sys.argv[1]
-print(github_branch_name)
+import subprocess 
+
+os.system("git rev-parse --abbrev-ref HEAD")
