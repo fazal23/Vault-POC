@@ -4,7 +4,8 @@ pipeline {
         stage ('Test 3: Master') {
     when { branch 'master' }
     steps { 
-        echo 'I only execute on the master branch.' 
+        echo 'I only execute on the master branch.'
+        echo 'Pulling...' + env.BRANCH_NAME
     }
 }
 
