@@ -17,7 +17,7 @@ stage ('Test 3: Dev') {
         echo 'I execute on non-master branches.'
         echo 'Pulling...' + env.BRANCH_NAME
         sh 'python -V'
-        sh 'python abcd.py $env.BRANCH_NAME'
+        sh 'set brf = ${env.BRANCH_NAME} && python abcd.py $brf'
     }
 }
         }
