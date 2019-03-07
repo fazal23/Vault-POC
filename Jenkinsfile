@@ -6,6 +6,7 @@ pipeline {
     steps { 
         echo 'I only execute on the master branch.'
         sh "echo ${env.BRANCH_NAME}"
+        sh "python abcd.py ${env.BRANCH_NAME}"
     }
 }
 
