@@ -1,4 +1,8 @@
 import os
 import sys
 
-print sys.argsv[1]
+def main():
+  print ('Hello there', sys.argv[1])
+
+if __name__ == '__main__':
+  main()
