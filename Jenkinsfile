@@ -7,8 +7,6 @@ pipeline {
         echo 'I only execute on the master branch.' 
         echo 'Pulling...' + env.BRANCH_NAME
         sh 'python -V'
-
-
 }
 
 stage ('Test 3: Dev') {
@@ -20,7 +18,6 @@ stage ('Test 3: Dev') {
         sh 'set brf = ${env.BRANCH_NAME} && python abcd.py $brf'
     }
 }
-        }
 }
 }
 
