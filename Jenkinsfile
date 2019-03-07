@@ -5,8 +5,7 @@ pipeline {
     when { branch 'master' }
     steps { 
         echo 'I only execute on the master branch.'
-        echo 'Pulling...' + env.BRANCH_NAME
-        sh "echo ${env.WORKSPACE}"
+        sh "echo ${env.BRANCH_NAME}"
     }
 }
 
@@ -14,8 +13,7 @@ stage ('Dev') {
     when { not { branch 'master' } }
     steps {
         echo 'I execute on non-master branches.'
-        echo 'Pulling...' + env.BRANCH_NAME
-        sh "echo ${env.WORKSPACE}"
+        sh "echo ${env.BRANCH_NAME}"
     }
 }
         }
