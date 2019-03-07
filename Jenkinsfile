@@ -15,7 +15,7 @@ stage ('Dev') {
     steps {
         echo 'I execute on non-master branches.'
         echo 'Pulling...' + env.BRANCH_NAME
-        sh "${env.WORKSPACE}"
+        sh "echo ${env.WORKSPACE}"
     }
 }
         }
