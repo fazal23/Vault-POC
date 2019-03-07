@@ -1,3 +1,4 @@
 import sys
-
-print sys.argv[0]
+import os
+github_branch_name = sys.argv[1]
+print(github_branch_name)
