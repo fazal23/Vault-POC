@@ -13,7 +13,7 @@ stage ('Dev') {
     when { not { branch 'master' } }
     steps {
         echo 'I execute on non-master branches.'
-        sh "echo ${env.BRANCH_NAME}"
+        sh "python abcd.py ${env.BRANCH_NAME}"
     }
 }
         }
