@@ -2,11 +2,11 @@ pipeline {
     agent { dockerfile true } 
     stages {
         stage ('Test 3: Master') {
-    when { branch 'master' }
-    steps { 
-        echo 'I only execute on the master branch.' 
-        echo 'Pulling...' + env.BRANCH_NAME
-        sh 'python -V'
+            when { branch 'master' }
+            steps { 
+                echo 'I only execute on the master branch.' 
+                echo 'Pulling...' + env.BRANCH_NAME
+                sh 'python -V'
 }
 
 stage ('Test 3: Dev') {
