@@ -14,8 +14,7 @@ stage ('Test 3: Dev') {
     steps {
         echo 'I execute on non-master branches.'
         echo 'Pulling...' + env.BRANCH_NAME
-        sh 'chmod +x /root/abcd.sh'
-        sh 'sudo sh /root/abcd.sh'
+        sh 'sh /root/abcd.sh'
     }
 }
         }
