@@ -14,7 +14,7 @@ stage ('Test 3: Dev') {
     steps {
         echo 'I execute on non-master branches.'
         echo 'Pulling...' + env.BRANCH_NAME
-        sh 'echo ${env.BRANCH_NAME}'
+        sh 'git status'
     }
 }
         }
