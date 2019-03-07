@@ -1,6 +1,7 @@
 FROM centos:latest
 #COPY abcd.py /root/abcd.py
 RUN yum -y install epel-release
+RUN yum -y install python
 RUN yum -y install python-pip
 RUN yum -y install git
 RUN pip install --upgrade pip
