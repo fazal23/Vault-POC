@@ -1,19 +1,20 @@
 pipeline {
-    agent none 
+    agent { dockerfile true} 
     stages {
-        stage ('Test 3: Master') {
+        stage ('Master') {
     when { branch 'master' }
     steps { 
         echo 'I only execute on the master branch.'
-        echo 'Pulling...' + env.BRANCH_NAME
+        sh "echo ${env.BRANCH_NAME}"
+        sh "python abcd.py ${env.BRANCH_NAME}"
     }
 }
 
-stage ('Test 3: Dev') {
+stage ('Dev') {
     when { not { branch 'master' } }
     steps {
         echo 'I execute on non-master branches.'
-        echo 'Pulling...' + env.BRANCH_NAME
+        sh "python abcd.py ${env.BRANCH_NAME}"
     }
 }
         }
