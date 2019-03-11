@@ -15,7 +15,7 @@ stage ('Dev') {
     steps {
         sh("printenv")
         echo 'I execute on non-master branches.'
-        sh "python abcd.py ${branchName}"
+        sh "python abcd.py ${env.CHANGE_BRANCH}"
     }
 }
         }
