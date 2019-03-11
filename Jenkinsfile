@@ -13,8 +13,10 @@ pipeline {
 stage ('Dev') {
     when { not { branch 'master' } }
     steps {
+        def scmVars = checkout scm
+        def branchName = scmVars.GIT_BRANCH
         echo 'I execute on non-master branches.'
-        sh "python abcd.py ${env.BRANCH_NAME}"
+        sh "python abcd.py ${branchName}"
     }
 }
         }
