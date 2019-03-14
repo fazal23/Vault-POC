@@ -13,7 +13,6 @@ pipeline {
 stage ('Dev') {
     when { not { branch 'master' } }
     steps {
-        sh("printenv")
         echo 'I execute on non-master branches.'
         sh "python abcd.py ${env.CHANGE_BRANCH}"
     }
